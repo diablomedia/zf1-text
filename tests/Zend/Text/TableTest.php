@@ -53,14 +53,14 @@ class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
 
     public function testColumnWordwrap()
     {
-        $column = new Zend_Text_Table_Column("foobar");
+        $column = new Zend_Text_Table_Column('foobar');
 
         $this->assertEquals($column->render(3), "foo\nbar");
     }
 
     public function testColumnUnicodeWordwrap()
     {
-        $column = new Zend_Text_Table_Column("Ömläüt");
+        $column = new Zend_Text_Table_Column('Ömläüt');
 
         $this->assertEquals($column->render(3), "Öml\näüt");
     }
@@ -241,7 +241,7 @@ class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
 
         $row = new Zend_Text_Table_Row();
         $row->appendColumn(new Zend_Text_Table_Column("foo\nbar"));
-        $row->appendColumn(new Zend_Text_Table_Column("foobar"));
+        $row->appendColumn(new Zend_Text_Table_Column('foobar'));
 
         $this->assertEquals($row->render(array(10, 10), $decorator), "│foo       │foobar    │\n│bar       │          │\n");
     }
@@ -252,7 +252,7 @@ class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
 
         $row = new Zend_Text_Table_Row();
         $row->appendColumn(new Zend_Text_Table_Column("föö\nbär"));
-        $row->appendColumn(new Zend_Text_Table_Column("fööbär"));
+        $row->appendColumn(new Zend_Text_Table_Column('fööbär'));
 
         $this->assertEquals($row->render(array(3, 10), $decorator), "│föö│fööbär    │\n│bär│          │\n");
     }
@@ -384,7 +384,7 @@ class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
         $row->appendColumn(new Zend_Text_Table_Column('foobar', null, 2));
         $table->appendRow($row);
 
-        $this->assertEquals($table->render(),   "┌──────────┬──────────┐\n"
+        $this->assertEquals($table->render(), "┌──────────┬──────────┐\n"
                                               . "│foobar    │foobar    │\n"
                                               . "├──────────┴──────────┤\n"
                                               . "│foobar               │\n"
@@ -415,7 +415,7 @@ class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
         $row->appendColumn(new Zend_Text_Table_Column('foobar'));
         $table->appendRow($row);
 
-        $this->assertEquals($table->render(),   "┌──────────┬─────────────────────┐\n"
+        $this->assertEquals($table->render(), "┌──────────┬─────────────────────┐\n"
                                               . "│foobar    │foobar               │\n"
                                               . "├──────────┼─────────────────────┤\n"
                                               . "│foobar    │foobar               │\n"
