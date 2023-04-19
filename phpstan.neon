@@ -14,7 +14,7 @@ parameters:
             message: '#Strict comparison using === between int<0, max>\|false and null will always evaluate to false\.#'
             path: ./src/Zend/Text/MultiByte.php
         -
-            message: '#Parameter \#3 \$length of function iconv_substr expects int\|null, int\|false given\.#'
+            message: '#Parameter \#3 \$length of function iconv_substr expects int(\|null)?, int\|false given\.#'
             path: ./src/Zend/Text/MultiByte.php
         -
             message: '#Offset int<0, max> does not exist on array\|null\.#'
