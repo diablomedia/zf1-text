@@ -1033,8 +1033,8 @@ class Zend_Text_Figlet
         }
 
         // Correct char height && maxlength
-        $this->_charHeight = max(1, $this->_charHeight);
-        $this->_maxLength  = max(1, $this->_maxLength);
+        $this->_charHeight = (int) max(1, $this->_charHeight);
+        $this->_maxLength  = (int) max(1, $this->_maxLength);
 
         // Give ourselves some extra room
         $this->_maxLength += 100;

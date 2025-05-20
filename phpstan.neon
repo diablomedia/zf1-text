@@ -1,5 +1,4 @@
 parameters:
-    checkMissingIterableValueType: false
     treatPhpDocTypesAsCertain: false
     level: 8
     paths:
@@ -8,6 +7,8 @@ parameters:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
     ignoreErrors:
+        -
+            identifier: missingType.iterableValue
         - '#Variable \$padMode might not be defined\.#'
         # Defensive coding
         -
@@ -17,10 +18,10 @@ parameters:
             message: '#Parameter \#3 \$length of function iconv_substr expects int(\|null)?, int\|false given\.#'
             path: ./src/Zend/Text/MultiByte.php
         -
-            message: '#Offset int<0, max> does not exist on array\|null\.#'
+            message: '#Offset int<0, max> might not exist on array\|null\.#'
             path: ./src/Zend/Text/Figlet.php
         -
-            message: '#Strict comparison using === between mixed and . . will always evaluate to false\.#'
+            message: '#Strict comparison using === between mixed~. . and . . will always evaluate to false\.#'
             path: ./src/Zend/Text/Figlet.php
             count: 2
         -
@@ -41,6 +42,14 @@ parameters:
             count: 1
         -
             message: '#Binary operation "\*" between 2 and float\|int\|string\|null results in an error\.#'
+            path: ./src/Zend/Text/Figlet.php
+            count: 1
+        -
+            message: '#Property Zend_Text_Figlet::\$_(hardBlank|charHeight|maxLength|fontSmush) \((string|int)\) does not accept float\|int\|string\|null\.#'
+            path: ./src/Zend/Text/Figlet.php
+            count: 4
+        -
+            message: '#Strict comparison using !== between non-falsy-string and .0. will always evaluate to true\.#'
             path: ./src/Zend/Text/Figlet.php
             count: 1
 
