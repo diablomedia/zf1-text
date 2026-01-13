@@ -52,4 +52,8 @@ parameters:
             message: '#Strict comparison using !== between non-falsy-string and .0. will always evaluate to true\.#'
             path: ./src/Zend/Text/Figlet.php
             count: 1
+        -
+            message: '#Possibly invalid array key type float\|int\.#'
+            path: ./src/Zend/Text/Figlet.php
+            count: 1
 
